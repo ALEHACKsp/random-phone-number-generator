@@ -3,17 +3,20 @@ import React from 'react';
 
 // components
 import Button from '../Button';
-import InputBox from '../InputBox';
+import SelectBox from '../SelectBox';
 
 // style
 import './Table.scss';
 
+const sortBy = ['ascending', 'descending'];
+
 const Table = () => (
   <div className="table">
     <section className="table__buttons">
-      <InputBox
-        placeholder="Sort By"
-      />
+      <SelectBox
+        name="sortBy"
+        options={sortBy}
+       />
       <Button
         hasIcon={true}
         iconClass="fas fa-download"

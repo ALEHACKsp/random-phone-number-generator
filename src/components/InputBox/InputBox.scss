@@ -14,11 +14,12 @@
   }
 
   .input {
-    padding: 2rem;
+    font-family: 'Lobster Two', cursive;
+    padding: 1.5rem;
     border-radius: 9rem;
     border: 2px solid transparentize($gray, 0.1);
     background: $primary-color;
-    font-size: 1.4rem;
+    font-size: 2rem;
     width: 100%;
     color: $gray;
 
@@ -39,6 +40,7 @@
   }
 
   ::placeholder {
+    font-family: 'Lobster Two', cursive;
     color: transparentize($gray, 0.5);
     font-size: 1.6rem;
   }
