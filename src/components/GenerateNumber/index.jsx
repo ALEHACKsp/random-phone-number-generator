@@ -4,6 +4,7 @@ import React from 'react';
 // component
 import InputBox from '../InputBox';
 import Button from '../Button';
+import Table from '../Table';
 
 // style
 import './GenerateNumber.scss';
@@ -20,6 +21,8 @@ const GenerateNumber = () => (
       // name={isSubmitting ? 'loading..' : 'Generate'}
       // disabled={isSubmitting}
     />
+    <Table />
+
   </div>
 )
 

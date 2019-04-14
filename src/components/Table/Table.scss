@@ -1,0 +1,73 @@
+@import '../../assets/scss/variables.scss';
+
+%display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table {
+  margin-top: 10rem;
+  padding: 3rem;
+  padding-top: 1rem;
+  background: $gray;
+  color: black;
+  width: 50%;
+  border-radius: .5rem;
+
+  &__buttons {
+    @extend %display-flex;
+  }
+
+  &__header {
+    @extend %display-flex;
+    padding: 1.5rem 0;
+  }
+
+  &__label {
+    margin-right: 2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: $tertiary-color;
+  }
+
+  &__number {
+    font-size: 1.8rem;
+  }
+
+  &__vl {
+    border: .05rem solid $primary-color;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+  }
+
+  th, td {
+   border: .1rem solid transparentize($primary-color, 0.8);
+   padding: 1rem;
+  }
+  th,td:first-child {
+    border-top: none;
+  }
+
+  thead {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  th {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  tr {
+    cursor: pointer;
+  }
+
+  tr:hover {
+    background: transparentize($tertiary-color, 0.95);
+  }
+}

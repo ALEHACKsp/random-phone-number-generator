@@ -11,15 +11,24 @@ const Button = ({
   type,
   disabled,
   classes,
-  name
+  name,
+  hasIcon,
+  iconClass,
 }) => (
-  <button
-    className={classes}
-    type={type ? type : 'button'}
-    disabled={disabled}
-  >
-    {name}
-  </button>
+  <React.Fragment>
+    <button
+      className={classes}
+      type={type ? type : 'button'}
+      disabled={disabled}
+    >
+      {name}
+      { hasIcon && iconClass &&
+        <span className="btn__icon">
+          <i class={iconClass}></i>
+        </span>
+      }
+    </button>
+  </React.Fragment>
 )
 
 Button.propTypes = {
@@ -27,6 +36,10 @@ Button.propTypes = {
   disabled: PropTypes.bool.isRequired,
   classes: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+};
+
+Button.defaultProps = {
+  hasIcon: false
 };
 
 export default Button;
