@@ -1,0 +1,46 @@
+@import '../../assets/scss/variables.scss';
+
+.form-input {
+
+  &__icon {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+  }
+
+  &__input {
+    margin:  1.5rem 0;
+    width: 40rem;
+  }
+
+  .input {
+    padding: 2rem;
+    width: 20rem;
+    border-radius: 9rem;
+    border: 2px solid transparentize($gray, 0.1);
+    background: $primary-color;
+    font-size: 1.4rem;
+    width: 100%;
+    color: $gray;
+
+    &:focus {
+      border: .1rem solid $gray;
+      border: 2px solid transparentize($tertiary-color, 0.1);
+    }
+
+    &__error, &__error:focus {
+      border: 1px solid $error-color;
+    }
+
+    &__error--message {
+      color: $error-color;
+      font-size: 1.4rem;
+    }
+
+  }
+
+  ::placeholder {
+    color: transparentize($gray, 0.5);
+    font-size: 1.6rem;
+  }
+}
