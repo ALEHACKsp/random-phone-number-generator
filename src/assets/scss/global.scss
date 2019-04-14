@@ -1,0 +1,47 @@
+@import './variables.scss';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // sets what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: 'Lobster Two', cursive;
+  
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  background-image: linear-gradient(to right bottom, rgba(52, 52, 52, .9), rgba(7, 0, 0, .95)), url('https://res.cloudinary.com/annmary/image/upload/v1555238966/number-image_k6cwvj.jpg');
+  background-size: cover;
+  font-size: 1.4rem;
+  color: $gray;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
