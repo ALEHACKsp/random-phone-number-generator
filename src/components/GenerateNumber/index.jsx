@@ -6,7 +6,7 @@ import Table from '../Table';
 import Form from '../Form';
 
 // utils
-import { maxGeneratedNumber, minGeneratedNumber } from '../../utils/actions';
+import { maxGeneratedNumber, minGeneratedNumber, sortByAscending } from '../../utils/actions';
 
 // style
 import './GenerateNumber.scss';
@@ -21,6 +21,13 @@ class GenerateNumber extends Component{
     }
   }
 
+  /**
+   * Gets generated numbers and sets the state
+   *
+   * @param {Array} generateNumber
+   *
+   * @returns {void}
+   */
   getGeneratedNumbers = (generatedNumber) => {
     const maxNumber = maxGeneratedNumber(generatedNumber);
     const minNumber = minGeneratedNumber(generatedNumber);
@@ -32,6 +39,19 @@ class GenerateNumber extends Component{
     })
   }
 
+  sortNumbers = (event) => {
+    let sortNumbers;
+
+    if (event.target.value === 'ascending') {
+      sortNumbers = sortByAscending(this.state.generatedNumber);
+      this.setState({
+        generateNumber: sortNumbers
+      })
+      console.log(sortByAscending(this.state.generatedNumber));
+    }
+  }
+
+
   render() {
     const { generatedNumber, maxNumber, minNumber } = this.state;
     return (
@@ -42,6 +62,7 @@ class GenerateNumber extends Component{
           generatedNumbers={ generatedNumber }
           maxNumber={ maxNumber }
           minNumber={ minNumber }
+          onChange={this.sortNumbers}
         />
       }
     </div>

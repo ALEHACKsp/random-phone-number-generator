@@ -16,7 +16,7 @@ export const generateNumber = (number) => {
 
 /**
  * Gets the max number generated
- * @param {number} generatedNumber
+ * @param {Array} generatedNumber
  *
  * @returns {number}
  */
@@ -26,10 +26,20 @@ export const maxGeneratedNumber = (generatedNumber) => {
 
 /**
  * Gets the min generated number
- * @param {number} generatedNumber
+ * @param {Array} generatedNumber
  *
  * @returns {number}
  */
 export const minGeneratedNumber = (generatedNumber) => {
   return Math.min(...generatedNumber);
 };
+
+/**
+ * Sorts numbers in an ascending order
+ * @param {Array} numbers
+ *
+ * @returns {Array}
+ */
+export const sortByAscending = (numbers) => {
+  return generateNumber.sort((a,b) => (a-b));
+}

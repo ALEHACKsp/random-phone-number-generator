@@ -10,12 +10,13 @@ import './Table.scss';
 
 const sortBy = ['ascending', 'descending'];
 
-const Table = ({generatedNumbers, maxNumber, minNumber}) => (
+const Table = ({generatedNumbers, maxNumber, minNumber, onChange}) => (
   <div className="table">
     <section className="table__buttons">
       <SelectBox
         name="sortBy"
         options={sortBy}
+        handleChange={onChange}
        />
       <Button
         hasIcon={true}
