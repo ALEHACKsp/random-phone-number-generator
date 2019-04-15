@@ -67,7 +67,9 @@ class SelectBox extends Component {
             autoComplete="off"
           />
 
-          <span className='select-box__input--icon' onClick={this.toggleDropdownOptions}>
+          <span className='select-box__input--icon'
+            // onClick={this.toggleDropdownOptions}
+          >
             { this.state.showDropdownOptions
               ? <i className="fas fa-caret-up"></i>
               : <i className="fas fa-caret-down"></i>

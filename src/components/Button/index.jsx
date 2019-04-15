@@ -24,7 +24,7 @@ const Button = ({
       {name}
       { hasIcon && iconClass &&
         <span className="btn__icon">
-          <i class={iconClass}></i>
+          <i className={iconClass}></i>
         </span>
       }
     </button>
@@ -33,9 +33,9 @@ const Button = ({
 
 Button.propTypes = {
   type: PropTypes.string,
-  disabled: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
   classes: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
 };
 
 Button.defaultProps = {
