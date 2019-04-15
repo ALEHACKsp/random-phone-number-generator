@@ -41,5 +41,15 @@ export const minGeneratedNumber = (generatedNumber) => {
  * @returns {Array}
  */
 export const sortByAscending = (numbers) => {
-  return generateNumber.sort((a,b) => (a-b));
+  return numbers.sort((a,b) => (a-b));
+}
+
+/**
+ * Sorts numbers in an descending order
+ * @param {Array} numbers
+ *
+ * @returns {Array}
+ */
+export const sortByDescending = (numbers) => {
+  return numbers.sort((a,b) => (b-a));
 }
