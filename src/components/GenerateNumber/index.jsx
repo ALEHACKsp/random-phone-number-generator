@@ -6,7 +6,7 @@ import Table from '../Table';
 import Form from '../Form';
 
 // utils
-import { maxGeneratedNumber } from '../../utils/actions';
+import { maxGeneratedNumber, minGeneratedNumber } from '../../utils/actions';
 
 // style
 import './GenerateNumber.scss';
@@ -23,22 +23,25 @@ class GenerateNumber extends Component{
 
   getGeneratedNumbers = (generatedNumber) => {
     const maxNumber = maxGeneratedNumber(generatedNumber);
-    console.log({maxNumber});
+    const minNumber = minGeneratedNumber(generatedNumber);
 
     this.setState({
       generatedNumber,
-      maxNumber
+      maxNumber,
+      minNumber
     })
   }
 
   render() {
+    const { generatedNumber, maxNumber, minNumber } = this.state;
     return (
       <div className="section">
       <Form getGeneratedNumbers={this.getGeneratedNumbers}/>
-      { this.state.generatedNumber.length > 0 &&
+      { generatedNumber.length > 0 &&
         <Table
-          generatedNumbers={this.state.generatedNumber}
-          maxNumber={this.state.maxNumber}
+          generatedNumbers={ generatedNumber }
+          maxNumber={ maxNumber }
+          minNumber={ minNumber }
         />
       }
     </div>

@@ -10,7 +10,7 @@ import './Table.scss';
 
 const sortBy = ['ascending', 'descending'];
 
-const Table = ({generatedNumbers, maxNumber}) => (
+const Table = ({generatedNumbers, maxNumber, minNumber}) => (
   <div className="table">
     <section className="table__buttons">
       <SelectBox
@@ -31,7 +31,7 @@ const Table = ({generatedNumbers, maxNumber}) => (
       </div>
       <div className="table__min-number">
         <label htmlFor="max-number"  className="table__label">Min Num:</label>
-        <span className="table__number">0801235634</span>
+        <span className="table__number">{minNumber && `0${minNumber}`}</span>
       </div>
     </section>
     <div className="table__vl"/>

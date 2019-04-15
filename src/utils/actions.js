@@ -14,9 +14,22 @@ export const generateNumber = (number) => {
   return generatedNumbers;
 };
 
+/**
+ * Gets the max number generated
+ * @param {number} generatedNumber
+ *
+ * @returns {number}
+ */
 export const maxGeneratedNumber = (generatedNumber) => {
-  console.log({generatedNumber})
-   const maxNumber = Math.max(...generatedNumber);
-   return maxNumber;
+  return Math.max(...generatedNumber);
 };
 
+/**
+ * Gets the min generated number
+ * @param {number} generatedNumber
+ *
+ * @returns {number}
+ */
+export const minGeneratedNumber = (generatedNumber) => {
+  return Math.min(...generatedNumber);
+};
