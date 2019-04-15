@@ -14,4 +14,9 @@ export const generateNumber = (number) => {
   return generatedNumbers;
 };
 
+export const maxGeneratedNumber = (generatedNumber) => {
+  console.log({generatedNumber})
+   const maxNumber = Math.max(...generatedNumber);
+   return maxNumber;
+};
 

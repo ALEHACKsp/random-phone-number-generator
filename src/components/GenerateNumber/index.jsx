@@ -16,13 +16,18 @@ class GenerateNumber extends Component{
     super(props);
     this.state = {
       generatedNumber: [],
+      maxNumber: '',
+      minNumber:''
     }
   }
 
   getGeneratedNumbers = (generatedNumber) => {
+    const maxNumber = maxGeneratedNumber(generatedNumber);
+    console.log({maxNumber});
 
     this.setState({
       generatedNumber,
+      maxNumber
     })
   }
 
@@ -33,6 +38,7 @@ class GenerateNumber extends Component{
       { this.state.generatedNumber.length > 0 &&
         <Table
           generatedNumbers={this.state.generatedNumber}
+          maxNumber={this.state.maxNumber}
         />
       }
     </div>
