@@ -11,7 +11,7 @@ class SelectBox extends Component {
 
     this.state = {
       showDropdownOptions: false,
-      selectOption: 'Choose One',
+      selectedOption: '',
     }
   }
 
@@ -47,29 +47,30 @@ class SelectBox extends Component {
     event.persist();
     event.target.value = option;
     event.target.name = this.props.name;
+
+    this.setState({
+      selectedOption: option
+    });
     this.props.handleChange(event);
   }
 
   render() {
-    const { name, handleChange, options, values, errors, touched } = this.props;
+    const { name, handleChange, options } = this.props;
     return(
       <div className="select-box">
-        <div className="select-box__inputField">
+        <div className="select-box__inputField" onClick={this.toggleDropdownOptions}>
           <input
             type="text"
             name={name}
-            className={errors[name] && touched[name] ? 'select-box__input select-box__input__error' : 'select-box__input'}
-            onClick={this.toggleDropdownOptions}
+            className='select-box__input'
             onBlur={this.hideDropdownOptions}
-            value={values[name]}
+            value={this.state.selectedOption}
             onChange={handleChange}
             placeholder="Sort By"
             autoComplete="off"
           />
 
-          <span className='select-box__input--icon'
-            // onClick={this.toggleDropdownOptions}
-          >
+          <span className='select-box__input--icon'>
             { this.state.showDropdownOptions
               ? <i className="fas fa-caret-up"></i>
               : <i className="fas fa-caret-down"></i>
@@ -90,13 +91,6 @@ class SelectBox extends Component {
       </div>
     )
   }
-}
-
-SelectBox.defaultProps = {
-  values: {},
-  touched: {},
-  errors: {},
-  isSubmitting: false
 }
 
 export default SelectBox;

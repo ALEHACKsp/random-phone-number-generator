@@ -39,6 +39,13 @@ class GenerateNumber extends Component{
     })
   }
 
+  /**
+   * Sorts numbers in ascending or descending order
+   *
+   * @param {event} event
+   *
+   * @returns {void}
+   */
   sortNumbers = (event) => {
     let sortNumbers;
 
