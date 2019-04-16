@@ -27,12 +27,13 @@ export const FormConfig = {
    * @param {object} values
    * @returns {void}
    */
-  handleSubmit: (values, { setSubmitting, props }) => {
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
     const generatedNumbers = generateNumber(values.number);
 
     setTimeout(() => {
       props.getGeneratedNumbers(generatedNumbers);
       setSubmitting(false);
+      resetForm();
     }, 500);
   }
 }
