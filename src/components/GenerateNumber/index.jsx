@@ -1,6 +1,9 @@
 // react library
 import React, { Component } from 'react';
 
+// third-party library
+import FileSaver from 'js-file-download';
+
 // components
 import Table from '../Table';
 import Form from '../Form';
@@ -47,20 +50,24 @@ class GenerateNumber extends Component{
    * @returns {void}
    */
   sortNumbers = (event) => {
-    let sortNumbers;
+    const { generatedNumber } = this.state;
+    const value = event.target.value;
 
-    if (event.target.value === 'ascending') {
-      sortNumbers = sortByAscending(this.state.generatedNumber);
-      this.setState({
-        generateNumber: sortNumbers
-      });
-    } else if(event.target.value === 'descending') {
-      sortNumbers = sortByDescending(this.state.generatedNumber);
-      console.log('descending')
-      this.setState({
-        generateNumber: sortNumbers
-      })
-    }
+    const sortNumbers = value === 'descending' ? sortByDescending(generatedNumber) : sortByAscending(generatedNumber);
+    this.setState({
+      generateNumber: sortNumbers
+    });
+  }
+
+  /**
+   * Downloads numbers
+   *
+   * @returns {void}
+   */
+  downLoadNumbers = () => {
+    const { generatedNumber } = this.state;
+
+    FileSaver(generatedNumber, 'numbers.xls');
   }
 
 
@@ -75,6 +82,7 @@ class GenerateNumber extends Component{
           maxNumber={ maxNumber }
           minNumber={ minNumber }
           onChange={this.sortNumbers}
+          downLoadNumbers={this.downLoadNumbers}
         />
       }
     </div>

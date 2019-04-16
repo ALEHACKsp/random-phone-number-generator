@@ -10,7 +10,7 @@ import './Table.scss';
 
 const sortBy = ['ascending', 'descending'];
 
-const Table = ({generatedNumbers, maxNumber, minNumber, onChange}) => (
+const Table = ({generatedNumbers, maxNumber, minNumber, onChange, downLoadNumbers }) => (
   <div className="table">
     <section className="table__buttons">
       <SelectBox
@@ -22,6 +22,7 @@ const Table = ({generatedNumbers, maxNumber, minNumber, onChange}) => (
         hasIcon={true}
         iconClass="fas fa-download"
         classes="btn btn__secondary"
+        onClick={downLoadNumbers}
       />
     </section>
     <div className="table__vl"/>

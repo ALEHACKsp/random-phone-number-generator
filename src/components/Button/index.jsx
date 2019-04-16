@@ -14,12 +14,14 @@ const Button = ({
   name,
   hasIcon,
   iconClass,
+  onClick
 }) => (
   <React.Fragment>
     <button
       className={classes}
       type={type ? type : 'button'}
       disabled={disabled}
+      onClick={onClick}
     >
       {name}
       { hasIcon && iconClass &&
@@ -36,6 +38,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   classes: PropTypes.string.isRequired,
   name: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
