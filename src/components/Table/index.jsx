@@ -28,6 +28,12 @@ const Table = ({generatedNumbers, maxNumber, minNumber, onChange, downLoadNumber
     <div className="table__vl"/>
     <section className="table__header">
       <div className="table__max-number">
+        <label htmlFor="max-number" className="table__label">Generated:</label>
+        <span className="table__number">{generatedNumbers.length} Numbers</span>
+      </div>
+    </section>
+    <section className="table__header">
+      <div className="table__max-number">
         <label htmlFor="max-number" className="table__label">Max Num:</label>
         <span className="table__number">{maxNumber && `0${maxNumber}`}</span>
       </div>

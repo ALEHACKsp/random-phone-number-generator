@@ -58,8 +58,8 @@ const Form = (props) => {
           classes="btn btn__primary"
           type="submit"
           name="Generate"
-          name={isSubmitting ? 'Generating...' : 'Generate'}
-          disabled={isSubmitting}
+          name={ isSubmitting ? 'Generating...' : 'Generate' }
+          disabled={ isSubmitting }
         />
       </form>
     )
