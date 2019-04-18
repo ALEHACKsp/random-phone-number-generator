@@ -61,15 +61,13 @@ class GenerateNumber extends Component{
    * @returns {void}
    */
   sortNumbers = (event) => {
-    let { generateNumberPerPage, currentPage,  totalPerPage} = this.state;
-    const offset = (currentPage - 1) * totalPerPage;
-    const value = event.target.value;
+    const  { generateNumberPerPage} = this.state;
+    const { value } = event.target;
 
     const sortNumbers = value === 'descending' ? sortByDescending(generateNumberPerPage) : sortByAscending(generateNumberPerPage);
-    generateNumberPerPage = sortNumbers.slice(offset).slice(0, totalPerPage);
 
     this.setState({
-      generateNumberPerPage
+      generateNumberPerPage: sortNumbers
     });
   }
 
@@ -85,24 +83,22 @@ class GenerateNumber extends Component{
   }
 
   /**
-     * @description - Handle the pagination
-     *
-     * @returns {void}
-     * @param {number} page - holds the page number you clicked
-     *
-     * @memberof Business
-     */
-    onPageChange = (page) => {
-      const { generatedNumber,  totalPerPage} = this.state;
-      const currentPage = page.selected + 1;
-      const offset = (currentPage - 1) * totalPerPage;
-      const generateNumberPerPage = generatedNumber.slice(offset).slice(0, totalPerPage);
+   * @description - Handle the pagination
+   *
+   * @returns {void}
+   * @param {number} page - holds the page number you clicked
+   */
+  onPageChange = (page) => {
+    const { generatedNumber,  totalPerPage} = this.state;
+    const currentPage = page.selected + 1;
+    const offset = (currentPage - 1) * totalPerPage;
+    const generateNumberPerPage = generatedNumber.slice(offset).slice(0, totalPerPage);
 
-      this.setState({
-        generateNumberPerPage,
-        currentPage
-      });
-    }
+    this.setState({
+      generateNumberPerPage,
+      currentPage
+    });
+  }
 
   render() {
     const { generateNumberPerPage, generatedNumber, maxNumber, minNumber } = this.state;
