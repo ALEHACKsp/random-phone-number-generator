@@ -93,21 +93,20 @@ class GenerateNumber extends Component{
      * @memberof Business
      */
     onPageChange = (page) => {
-      console.log({page})
       const { generatedNumber,  totalPerPage} = this.state;
       const currentPage = page.selected + 1;
       const offset = (currentPage - 1) * totalPerPage;
       const generateNumberPerPage = generatedNumber.slice(offset).slice(0, totalPerPage);
+
       this.setState({
         generateNumberPerPage,
         currentPage
       });
-      console.log('on page change function');
     }
 
   render() {
     const { generateNumberPerPage, generatedNumber, maxNumber, minNumber } = this.state;
-    console.log(this.state.totalPages)
+
     return (
       <div className="section">
       <Form getGeneratedNumbers={this.getGeneratedNumbers}/>
