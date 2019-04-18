@@ -1,0 +1,41 @@
+@import '../../assets/scss/variables.scss';
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  cursor: pointer;
+  padding: 5rem 0;
+
+  li {
+    a {
+      color: $primary-color;
+      padding: 1rem;
+      background: $gray;
+      border-radius: 2rem 0;
+    }
+  }
+
+  .active {
+    a {
+      background: linear-gradient(to right bottom, $secondary-color, $tertiary-color);
+    }
+  }
+
+  .disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  li:last-child, li:first-child {
+    margin: 0 2rem;
+  }
+
+  li:last-child {
+    border-radius: 2rem 0;
+  }
+
+  li:first-child {
+    border-radius: 2rem 0;
+  }
+}

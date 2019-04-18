@@ -14,7 +14,6 @@ import { maxGeneratedNumber, minGeneratedNumber, sortByAscending, sortByDescendi
 
 // style
 import './GenerateNumber.scss';
-import { generateNumber } from '../../utils/actions';
 
 class GenerateNumber extends Component{
   constructor(props){
@@ -29,7 +28,6 @@ class GenerateNumber extends Component{
       totalPages: 2
     }
   }
-
 
   /**
    * @description Gets generated numbers and sets the state
@@ -68,7 +66,7 @@ class GenerateNumber extends Component{
     const value = event.target.value;
 
     const sortNumbers = value === 'descending' ? sortByDescending(generateNumberPerPage) : sortByAscending(generateNumberPerPage);
-    generateNumberPerPage = sortNumbers.slice(offset).slice(0, this.state.totalPerPage);
+    generateNumberPerPage = sortNumbers.slice(offset).slice(0, totalPerPage);
 
     this.setState({
       generateNumberPerPage
@@ -86,32 +84,51 @@ class GenerateNumber extends Component{
     FileSaver(generatedNumber, 'numbers.xls');
   }
 
+  /**
+     * @description - Handle the pagination
+     *
+     * @returns {void}
+     * @param {number} page - holds the page number you clicked
+     *
+     * @memberof Business
+     */
+    onPageChange = (page) => {
+      console.log({page})
+      const { generatedNumber,  totalPerPage} = this.state;
+      const currentPage = page.selected + 1;
+      const offset = (currentPage - 1) * totalPerPage;
+      const generateNumberPerPage = generatedNumber.slice(offset).slice(0, totalPerPage);
+      this.setState({
+        generateNumberPerPage,
+        currentPage
+      });
+      console.log('on page change function');
+    }
 
   render() {
-    const { generateNumberPerPage, maxNumber, minNumber } = this.state;
+    const { generateNumberPerPage, generatedNumber, maxNumber, minNumber } = this.state;
     console.log(this.state.totalPages)
     return (
       <div className="section">
       <Form getGeneratedNumbers={this.getGeneratedNumbers}/>
       { generateNumberPerPage.length > 0 &&
-        <React.Fragment>
-          <Table
-            generatedNumbers={ generateNumberPerPage }
-            maxNumber={ maxNumber }
-            minNumber={ minNumber }
-            onChange={this.sortNumbers}
-            downLoadNumbers={this.downLoadNumbers}
-          />
-
-          <Pagination
-            pageCount={ this.state.totalPages }
-            currentPage={ this.state.currentPage }
-            limit={ this.state.totalPerPage }
-            onPageChange={ this.onPageChange }
-          />
-        </React.Fragment>
+        <Table
+          generatedNumbers={ generateNumberPerPage }
+          maxNumber={ maxNumber }
+          minNumber={ minNumber }
+          onChange={this.sortNumbers}
+          downLoadNumbers={this.downLoadNumbers}
+          totalNumberGenerated={generatedNumber}
+        />
       }
-      
+      { generatedNumber.length > 10 &&
+         <Pagination
+         pageCount={ this.state.totalPages }
+         currentPage={ this.state.currentPage }
+         limit={ this.state.totalPerPage }
+         onPageChange={ this.onPageChange }
+       />
+      }
     </div>
     )
   }

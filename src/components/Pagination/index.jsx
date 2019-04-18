@@ -2,6 +2,9 @@ import React from 'react';
 
 import ReactPagination from 'react-paginate';
 
+// style
+import './Pagination.scss';
+
 const Pagination = ({
   pageCount,
   currentPage,
