@@ -8,7 +8,7 @@ import { mount } from 'enzyme';
 import Button from './index';
 
 describe('Button Component', () => {
-  it('should render the button', () => {
+  it('should render button', () => {
     const wrapper = mount(<Button name="generate" classes="btn"/>);
     const button = wrapper.find('button');
 

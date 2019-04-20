@@ -16,8 +16,6 @@ const InputBox = ({
   name,
   type,
   placeholder,
-  hasIcon,
-  iconClass
 }) => (
   <div className="form-input">
     <div className="form-input__input">
@@ -32,7 +30,6 @@ const InputBox = ({
         value={values[name]}
         placeholder={placeholder}
       />
-      { hasIcon && iconClass && <span className="form-input__icon"><i class={iconClass}></i></span> }
       {
         errors[name] && touched[name] && <span className="input__error--message">{errors[name]}</span>
       }
@@ -49,7 +46,6 @@ InputBox.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  iconText: PropTypes.string,
 };
 
 InputBox.defaultProps = {
