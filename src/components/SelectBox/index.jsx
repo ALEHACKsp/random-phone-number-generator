@@ -1,6 +1,9 @@
 // react libraries
 import React, { Component } from 'react';
 
+// third-party library
+import PropTypes from 'prop-types';
+
 // styles
 import './SelectBox.scss';
 
@@ -91,6 +94,12 @@ class SelectBox extends Component {
       </div>
     )
   }
+}
+
+SelectBox.propTypes = {
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func,
+  options: PropTypes.array.isRequired,
 }
 
 export default SelectBox;
