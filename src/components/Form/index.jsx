@@ -47,7 +47,7 @@ const Form = (props) => {
     handleChange,
     handleSubmit } = props;
 
-    return console.log(isSubmitting) || (
+    return (
       <form onSubmit={handleSubmit}>
         <InputBox
           placeholder="Input Number"
