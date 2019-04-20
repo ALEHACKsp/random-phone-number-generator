@@ -28,6 +28,7 @@ export const FormConfig = {
    * @returns {void}
    */
   handleSubmit: (values, { setSubmitting, resetForm, props }) => {
+    
     const generatedNumbers = generateNumber(values.number);
 
     setTimeout(() => {
@@ -46,7 +47,7 @@ const Form = (props) => {
     handleChange,
     handleSubmit } = props;
 
-    return (
+    return console.log(isSubmitting) || (
       <form onSubmit={handleSubmit}>
         <InputBox
           placeholder="Input Number"

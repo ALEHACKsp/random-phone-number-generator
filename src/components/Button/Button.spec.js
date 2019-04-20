@@ -5,7 +5,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 // component
-import Button from './index';
+import Button from './';
 
 describe('Button Component', () => {
   it('should render button', () => {
