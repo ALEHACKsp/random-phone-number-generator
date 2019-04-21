@@ -18,7 +18,7 @@ It is an application that generates random phone numbers. The length of the gene
 ## Technology Stack Used
 * React
 
-## Getting Started
+## Setup
 
 * Clone the repo
 
@@ -32,16 +32,18 @@ It is an application that generates random phone numbers. The length of the gene
 > $ npm install
 ```
 
-* To start the application, run
+## Running the app
+
+To get the app up and running (and really see if it worked), run:
 
 ```sh
-> $ npm run start
+> $ npm start
 ```
 
-## Running tests
+## Running the tests
 
 * To run the tests
 
 ```sh
-> $ npm run  test
+> $ npm test
 ```
