@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Annmary12/random-phone-number-generator.svg?branch=development)](https://travis-ci.org/Annmary12/random-phone-number-generator)
+[![Build Status](https://travis-ci.org/Annmary12/random-phone-number-generator.svg?branch=development)](https://travis-ci.org/Annmary12/random-phone-number-generator) [![Coverage Status](https://coveralls.io/repos/github/Annmary12/random-phone-number-generator/badge.svg?branch=development)](https://coveralls.io/github/Annmary12/random-phone-number-generator?branch=development)
 
 ## Random Phone Number Generator
 
