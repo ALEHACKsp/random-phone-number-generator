@@ -16,7 +16,7 @@ const Pagination = ({
   <ReactPagination 
     previousLabel="previous"
     nextLabel="next"
-    breakLabel={ <a href="">...</a> }
+    breakLabel={ <a href="pagination">...</a> }
     breakClassName="break-me"
     pageCount={ pageCount }
     marginPagesDisplayed={ currentPage }
