@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-duplicate-props */
 // react library
-import React, { Component } from 'react';
+import React from 'react';
 
 // third-party library
 import { withFormik } from 'formik';
