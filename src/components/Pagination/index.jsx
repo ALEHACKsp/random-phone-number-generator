@@ -1,5 +1,7 @@
+// react library
 import React from 'react';
 
+// third-party library
 import ReactPagination from 'react-paginate';
 
 // style
